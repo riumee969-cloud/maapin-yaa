@@ -1,2 +1,0 @@
-# maapin-yaa
-for ayang

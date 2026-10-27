@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17121a">
+<title>Untuk ALL SAYANGGG ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  --bg: #17121a;
+  --panel: #211923;
+  --panel-light: #2b202b;
+  --rose: #e9a1b8;
+  --rose-light: #ffd5e2;
+  --cream: #fff6f5;
+  --muted: #c8b7c4;
+  --gold: #d9bc91;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 15% 10%, #49273c55, transparent 40%),
+    radial-gradient(ellipse at 90% 80%, #38223e55, transparent 40%),
+    var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--rose);
+  color: var(--bg);
+}
+
+/* NAVBAR */
+
+nav {
+  width: min(1120px, 90%);
+  margin: auto;
+  padding: 27px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.brand {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--rose-light);
+}
+
+.nav-note {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* HERO */
+
+.hero {
+  width: min(1000px, 90%);
+  min-height: 620px;
+  margin: auto;
+  padding: 85px 0 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  animation: fadeUp 1s both;
+}
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(38px, 7vw, 72px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  max-width: 850px;
+  animation: fadeUp 1s .1s both;
+}
+
+h1 span {
+  display: block;
+  color: var(--rose);
+  font-style: italic;
+}
+
+.subtitle {
+  max-width: 440px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 20px;
+  animation: fadeUp 1s .2s both;
+}
+
+/* ENVELOPE */
+
+.envelope-area {
+  margin-top: 50px;
+  animation: fadeUp 1s .3s both;
+}
+
+.envelope {
+  position: relative;
+  width: 220px;
+  height: 145px;
+  border: 1px solid #e9a1b866;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #674053, #382435);
+  cursor: pointer;
+  box-shadow: 0 20px 65px #00000045, 0 0 45px #e9a1b810;
+  transition: transform .35s, box-shadow .35s;
+  outline: none;
+  isolation: isolate;
+}
+
+.envelope:hover,
+.envelope:focus-visible {
+  transform: translateY(-7px);
+  box-shadow: 0 28px 75px #00000060, 0 0 45px #e9a1b822;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(35deg, #ffffff08, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 75px;
+  background: #81506c;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform .7s ease;
+  z-index: 3;
+}
+
+.envelope.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  top: 13px;
+  height: 118px;
+  background: #fff6f0;
+  color: #503346;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  transition: transform .7s ease;
+  z-index: 2;
+}
+
+.envelope.opened .envelope-letter {
+  transform: translateY(-53px);
+}
+
+.envelope-letter small {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.envelope-letter strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.seal {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(--rose);
+  color: #49283a;
+  left: 50%;
+  top: 57px;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  z-index: 4;
+  box-shadow: 0 3px 15px #00000025;
+  transition: opacity .3s, transform .3s;
+}
+
+.envelope.opened .seal {
+  opacity: 0;
+  transform: translateX(-50%) scale(.6);
+}
+
+.envelope-hint {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 28px;
+}
+
+/* DIVIDER */
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rose);
+  margin: 5px auto 45px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 55px;
+  background: #e9a1b844;
+}
+
+/* LETTER */
+
+.letter-section {
+  width: min(720px, 90%);
+  margin: 0 auto 100px;
+  display: none;
+  animation: fadeUp .8s both;
+}
+
+.letter-section.visible {
+  display: block;
+}
+
+.letter-card {
+  padding: clamp(25px, 6vw, 65px);
+  border: 1px solid #e9a1b82b;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #2b202beF, #201822F5);
+  box-shadow: 0 30px 100px #00000030;
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-card::before {
+  content: "♡";
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  color: #e9a1b80d;
+  font-family: Georgia, serif;
+  font-size: 150px;
+  pointer-events: none;
+}
+
+.letter-label {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.letter-card h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(30px, 5vw, 43px);
+  font-weight: 500;
+  color: var(--rose-light);
+  margin-bottom: 30px;
+}
+
+.letter-body {
+  position: relative;
+  color: #e0d4df;
+  font-size: 14px;
+  line-height: 2.05;
+}
+
+.letter-body p {
+  margin-bottom: 20px;
+}
+
+.letter-body .greeting {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--cream);
+  font-size: 20px;
+  font-style: italic;
+}
+
+.signature {
+  margin-top: 38px;
+  padding-top: 25px;
+  border-top: 1px solid #ffffff15;
+}
+
+.signature p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.signature strong {
+  display: block;
+  color: var(--rose);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+/* SECRET MESSAGE */
+
+.secret-area {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.secret-button {
+  display: inline-block;
+  background: transparent;
+  color: var(--rose-light);
+  border: 1px solid #e9a1b866;
+  border-radius: 3px;
+  padding: 15px 23px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.secret-button:hover,
+.secret-button:focus-visible {
+  background: #e9a1b815;
+  border-color: var(--rose);
+  transform: translateY(-2px);
+}
+
+.secret-message {
+  display: none;
+  margin-top: 25px;
+  padding: 25px;
+  border: 1px solid #e9a1b822;
+  border-radius: 5px;
+  background: #e9a1b808;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  text-align: left;
+  animation: fadeUp .5s both;
+}
+
+.secret-message.visible {
+  display: block;
+}
+
+.secret-message h3 {
+  color: var(--rose-light);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #ffffff12;
+}
+
+footer p {
+  color: #a999a7;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 2.2;
+}
+
+footer span {
+  color: var(--rose);
+}
+
+/* FLOATING HEARTS */
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #e9a1b8;
+  opacity: 0;
+  animation: floatHeart 9s linear infinite;
+}
+
+.heart:nth-child(1) { left: 8%; animation-delay: 0s; font-size: 15px; }
+.heart:nth-child(2) { left: 25%; animation-delay: 3s; font-size: 10px; }
+.heart:nth-child(3) { left: 70%; animation-delay: 1s; font-size: 17px; }
+.heart:nth-child(4) { left: 88%; animation-delay: 5s; font-size: 12px; }
+.heart:nth-child(5) { left: 48%; animation-delay: 7s; font-size: 9px; }
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: .3; }
+  80% { opacity: .2; }
+  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  nav {
+    padding: 22px 0;
+  }
+
+  .brand {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .nav-note {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding-top: 75px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .envelope {
+    width: 200px;
+    height: 135px;
+  }
+
+  .envelope-letter {
+    height: 108px;
+  }
+
+  .envelope-flap {
+    height: 70px;
+  }
+
+  .seal {
+    top: 52px;
+  }
+
+  .letter-section {
+    margin-bottom: 70px;
+  }
+
+  .letter-body {
+    font-size: 13px;
+    line-height: 1.95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" aria-hidden="true">
+  <span class="heart">♡</span>
+  <span class="heart">♥</span>
+  <span class="heart">♡</span>
+  <span class="heart">♥</span>
+  <span class="heart">♡</span>
+</div>
+
+<nav>
+  <div class="brand">A LETTER, WITH LOVE</div>
+  <div class="nav-note">A SMALL NOTE · JUST FOR YOU</div>
+</nav>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">Something I want you to know</p>
+
+    <h1>
+      Untuk kamu,
+      <span>ALL SAYANGGG.</span>
+    </h1>
+
+    <p class="subtitle">
+      Ada beberapa hal yang mungkin lebih baik aku sampaikan
+      lewat surat kecil ini. Bacanya pelan-pelan, ya. 🤍
+    </p>
+
+    <div class="envelope-area">
+      <div
+        class="envelope"
+        id="envelope"
+        role="button"
+        tabindex="0"
+        aria-label="Buka surat untuk ALL SAYANGGG"
+        aria-expanded="false"
+      >
+        <div class="envelope-letter">
+          <small>A LITTLE LETTER</small>
+          <strong>Maafin aku, yaa 🤍</strong>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="seal">♡</div>
+      </div>
+
+      <p class="envelope-hint" id="hint">
+        KLIK AMPLOP UNTUK MEMBUKA SURAT
+      </p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">♡</div>
+
+  <section class="letter-section" id="letter">
+    <article class="letter-card">
+      <p class="letter-label">A LETTER FROM MY HEART</p>
+
+      <h2>Maaf ya, sayang.</h2>
+
+      <div class="letter-body">
+        <p class="greeting">Hai, ALL SAYANGGG. 🤍</p>
+
+        <p>
+          Aku mau minta maaf karena kata-kata aku bikin kamu ngambek
+          atau nggak nyaman. Aku sadar aku seharusnya lebih hati-hati
+          sebelum ngomong, dan aku menyesal kalau ucapanku bikin
+          perasaan kamu terluka.
+        </p>
+
+        <p>
+          Aku nggak mau membela diri atau mengecilkan apa yang kamu
+          rasakan. Mungkin niatku bukan untuk menyakiti, tapi aku
+          paham kalau dampaknya tetap bisa bikin kamu kecewa.
+          Maaf ya, sayang.
+        </p>
+
+        <p>
+          Kamu berarti buat aku. Aku senang dengan obrolan kita,
+          candaan kecil kita, dan cara sederhana kamu bikin hari-hari
+          terasa lebih berwarna. Aku ingin menjaga hal baik itu
+          dengan belajar lebih memahami perasaanmu, bukan cuma
+          dengan kata-kata manis.
+        </p>
+
+        <p>
+          Aku nggak mengharapkan surat ini langsung membuat semuanya
+          kembali seperti semula. Kamu nggak harus langsung memaafkan
+          aku atau berpura-pura sudah nggak kesal. Kalau kamu butuh
+          waktu, aku akan menghargainya.
+        </p>
+
+        <p>
+          Kalau nanti kamu sudah siap, aku ingin mendengarkan apa
+          yang kamu rasakan dan ngobrol baik-baik. Aku mau belajar
+          dari kesalahan ini dan menunjukkan perubahanku lewat sikap,
+          sedikit demi sedikit.
+        </p>
+
+        <p>
+          Maaf ya, ALL SAYANGGG. Terima kasih sudah meluangkan waktu
+          untuk membaca surat ini. Aku cuma ingin kamu tahu:
+          perasaanmu penting buat aku. 🤍
+        </p>
+      </div>
+
+      <div class="signature">
+        <p>Dari aku, yang masih belajar jadi lebih baik.</p>
+        <strong>With love, always. ♡</strong>
+      </div>
+
+      <div class="secret-area">
+        <button
+          class="secret-button"
+          id="secretButton"
+          aria-expanded="false"
+          aria-controls="secretMessage"
+        >
+          BUKA PESAN KECIL LAINNYA ♡
+        </button>
+
+        <div class="secret-message" id="secretMessage">
+          <h3>Untuk ALL SAYANGGG, satu hal lagi…</h3>
+
+          <p>
+            Aku nggak bisa menjanjikan bakal selalu sempurna,
+            tapi aku bisa berusaha lebih sadar dengan kata-kataku
+            dan lebih serius mendengarkan kamu.
+          </p>
+
+          <p style="margin-top: 14px;">
+            Nggak perlu buru-buru membalas surat ini. Ambil waktu
+            yang kamu butuhkan. Kalau kamu siap untuk ngobrol,
+            aku ingin mendengarkan tanpa menyela dan tanpa
+            mencari-cari alasan.
+          </p>
+
+          <p style="margin-top: 18px; color: var(--rose-light);">
+            Semoga setelah ini kita bisa saling memahami lebih baik. 🤍
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>MADE WITH SINCERITY <span>♡</span></p>
+  <p>FOR ALL SAYANGGG · ALWAYS WITH RESPECT</p>
+</footer>
+
+<script>
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const hint = document.getElementById("hint");
+
+function openLetter() {
+  if (envelope.classList.contains("opened")) {
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+    return;
+  }
+
+  envelope.classList.add("opened");
+  envelope.setAttribute("aria-expanded", "true");
+  hint.textContent = "SURAT KECIL BUAT KAMU 🤍";
+
+  window.setTimeout(() => {
+    letter.classList.add("visible");
+
+    window.setTimeout(() => {
+      letter.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 150);
+  }, 450);
+}
+
+envelope.addEventListener("click", openLetter);
+
+envelope.addEventListener("keydown", function(event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openLetter();
+  }
+});
+
+const secretButton = document.getElementById("secretButton");
+const secretMessage = document.getElementById("secretMessage");
+
+secretButton.addEventListener("click", function() {
+  const isVisible = secretMessage.classList.toggle("visible");
+
+  secretButton.setAttribute("aria-expanded", String(isVisible));
+
+  secretButton.textContent = isVisible
+    ? "TUTUP PESAN KECIL ♡"
+    : "BUKA PESAN KECIL LAINNYA ♡";
+
+  if (isVisible) {
+    secretMessage.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+});
+</script>
+
+</body>
+</html>
